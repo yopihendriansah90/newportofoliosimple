@@ -47,7 +47,7 @@
     .skill-chip:hover { border-color: #0070f3; color: #70a9ff; }
     .profile-frame { aspect-ratio: 1; overflow: hidden; border: 1px solid #29292e; border-radius: 1rem; background: #151517; }
     .contact-item { display: flex; min-height: 36px; align-items: center; gap: .65rem; overflow-wrap: anywhere; }
-    .contact-item .material-symbols-outlined { color: #777780; font-size: 1.15rem; }
+    .contact-item .material-symbols-outlined { color: #70a9ff; font-size: 1.15rem; }
     .timeline { position: relative; border-left: 1px solid #303036; padding-left: 1.4rem; }
     .timeline-item { position: relative; padding-bottom: 2.25rem; }
     .timeline-item:last-child { padding-bottom: 0; }
