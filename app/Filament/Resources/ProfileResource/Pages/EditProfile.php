@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Filament\Resources\ProfileResource\Pages;
+
+use App\Filament\Resources\ProfileResource;
+use Filament\Resources\Pages\EditRecord;
+
+class EditProfile extends EditRecord
+{
+    protected static string $resource = ProfileResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return static::getResource()::getUrl('edit', ['record' => $this->record]);
+    }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html><html class="dark" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Yopi Hendriansah - Full-Stack Programmer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "digitalent-blue": "#0056B3",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#ff9e97",
+                        "background": "#131313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-background": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#8c171b",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313",
+                        "on-tertiary-fixed": "#2f1500",
+                        "on-tertiary": "#4d2600",
+                        "primary-fixed-dim": "#aec6ff",
+                        "digitalent-orange": "#F9A825",
+                        "tertiary-fixed": "#ffdcc3",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-container": "#b36100",
+                        "on-surface-variant": "#c1c6d7",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "surface": "#131313",
+                        "secondary-fixed": "#ffdad7",
+                        "on-primary-fixed-variant": "#004397",
+                        "on-primary-container": "#ffffff",
+                        "inverse-primary": "#0059c5",
+                        "outline-variant": "#414754",
+                        "tertiary": "#ffb77d",
+                        "on-secondary": "#68000a",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#8b90a0",
+                        "surface-tint": "#aec6ff",
+                        "text-muted": "#888888",
+                        "secondary": "#ffb3ad",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#0070f3",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "surface-border": "#1F1F1F",
+                        "ipn-maroon": "#800000",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-container": "#ffffff",
+                        "primary": "#aec6ff",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "secondary-container": "#8f191d",
+                        "primary-fixed": "#d8e2ff",
+                        "on-primary-fixed": "#001a43",
+                        "on-primary": "#002e6b",
+                        "surface-container-highest": "#353534",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed": "#410004"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "stack-lg": "32px",
+                        "section-padding": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Geist", "sans-serif"],
+                        "headline-lg": ["Geist", "sans-serif"],
+                        "code-sm": ["JetBrains Mono", "monospace"],
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-xl": ["Geist", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "code-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-geist { font-family: 'Geist', sans-serif; }
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Glow effect on hover */
+        .card-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 112, 243, 0.1);
+            border-color: #414754;
+        }
+        .skill-badge:hover {
+            border-color: #0070f3;
+            color: #0070f3;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-digitalent-blue selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-surface-border">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface">YH Portfolio</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface font-bold border-b-2 border-digitalent-blue pb-1 text-digitalent-blue transition-all" href="#tentang">Tentang</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-digitalent-blue" href="#skills">Skills</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-digitalent-blue" href="#pengalaman">Pengalaman</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-digitalent-blue" href="#proyek">Proyek</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:text-digitalent-blue" href="#kontak">Kontak</a>
+</div>
+<a class="px-4 py-2 bg-digitalent-blue text-white rounded font-body-md text-body-md hover:bg-inverse-primary transition-colors hidden md:block" href="#">Unduh PDF</a>
+<button class="md:hidden text-on-surface"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-gutter pt-32 pb-section-padding space-y-section-padding">
+<!-- Hero & Profile Section -->
+<section class="flex flex-col-reverse md:flex-row items-center gap-stack-lg md:gap-16" id="tentang">
+<div class="flex-1 space-y-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2 font-geist">YOPI HENDRIANSAH</h1>
+<p class="font-headline-lg text-headline-lg text-digitalent-blue font-geist">Full-Stack Programmer</p>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+<p class="">
+                        Seorang Full-Stack Programmer dengan pengalaman lebih dari 3 tahun dalam merancang, mengembangkan, dan memelihara aplikasi web yang scalable dan aman. Saya memiliki keahlian mendalam dalam ekosistem PHP/Laravel, serta pengalaman praktis dalam integrasi API, manajemen database, dan deployment berbasis Docker. Fokus utama saya adalah menciptakan solusi teknologi yang efisien dan berdampak positif bagi bisnis.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-surface-border mt-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted">location_on</span>
+<span class="font-body-md text-body-md">Tasikmalaya, Jawa Barat</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted">mail</span>
+<span class="font-body-md text-body-md">hendriansahyopi@gmail.com</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted">phone</span>
+<span class="font-body-md text-body-md">+62 821-2099-0740</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted">link</span>
+<a class="font-body-md text-body-md hover:text-digitalent-blue transition-colors" href="#">LinkedIn Profile</a>
+</div>
+</div>
+<div class="pt-6 flex gap-4 md:hidden">
+<a class="flex-1 text-center px-4 py-3 bg-digitalent-blue text-white rounded font-body-md text-body-md hover:bg-inverse-primary transition-colors" href="#">Unduh PDF</a>
+</div>
+</div>
+<div class="w-48 h-48 md:w-80 md:h-80 shrink-0 relative rounded-xl overflow-hidden border border-surface-border">
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10 opacity-50"></div>
+<img alt="Yopi Hendriansah" class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIIfFVOgJC9w15IhPNKER_C-Ucsf5gWJzh5UvQni3CcS_wEg3di9hcQYG55ZK_2UUJxEH7WhGXlDSPkS4vTW8dQWMFa-ViJZZ5-xmN9f39NVlGH7btxbhgdu0inP0I_nWj2OtRtII-nPWqKJIb5KIzK_bp-abDQEUir5sK2x5L_GHlh2vFFd3ySJn2jUXzX1sai2XWkEaXBr9z7otCWXO_2dlYR1VSH9Vxh78cyU4YQWBi8GjcLnMHFrs1hB1IFZgyuQ">
+</div>
+</section>
+<!-- Technical Skills -->
+<section class="space-y-8" id="skills">
+<div class="border-b border-surface-border pb-4">
+<h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Keahlian Teknis</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Backend -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-surface-border card-glow transition-all">
+<h3 class="font-label-caps text-label-caps text-text-muted mb-4 uppercase tracking-wider">Backend &amp; Database</h3>
+<div class="flex flex-wrap gap-2">
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">PHP</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Laravel</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">REST API</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">MySQL</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">PostgreSQL</span>
+</div>
+</div>
+<!-- Frontend -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-surface-border card-glow transition-all">
+<h3 class="font-label-caps text-label-caps text-text-muted mb-4 uppercase tracking-wider">Frontend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">HTML5</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">CSS3</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">JavaScript</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Filament</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Tailwind CSS</span>
+</div>
+</div>
+<!-- Tools & DevOps -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-surface-border card-glow transition-all">
+<h3 class="font-label-caps text-label-caps text-text-muted mb-4 uppercase tracking-wider">Tools &amp; Integrations</h3>
+<div class="flex flex-wrap gap-2">
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Docker</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Git / GitHub</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Payment Gateway</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">WhatsApp API</span>
+<span class="skill-badge px-3 py-1 border border-surface-border rounded bg-surface font-code-sm text-code-sm text-on-surface-variant cursor-default transition-colors">Linux</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="space-y-8" id="pengalaman">
+<div class="border-b border-surface-border pb-4">
+<h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Pengalaman Profesional</h2>
+</div>
+<div class="relative border-l-2 border-surface-border ml-3 md:ml-6 space-y-12 pb-8">
+<!-- Experience Item 1 -->
+<div class="relative pl-8 md:pl-12">
+<div class="absolute w-4 h-4 rounded-full bg-digitalent-blue -left-[9px] top-1 ring-4 ring-background"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface">Full-Stack Web Developer</h3>
+<span class="font-label-caps text-label-caps text-digitalent-blue bg-digitalent-blue/10 px-2 py-1 rounded inline-block w-max">Ags 2024 - Sekarang</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant mb-3 font-semibold">CV. Walatra Herbal</div>
+<p class="font-body-md text-body-md text-text-muted">
+                        Mengembangkan dan memelihara sistem internal perusahaan. Membangun aplikasi manajemen inventaris dan sistem point of sale (POS) terintegrasi menggunakan Laravel dan MySQL.
+                    </p>
+</div>
+<!-- Experience Item 2 -->
+<div class="relative pl-8 md:pl-12">
+<div class="absolute w-4 h-4 rounded-full bg-surface-border border-2 border-text-muted -left-[9px] top-1 ring-4 ring-background"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface">Freelance Web Developer</h3>
+<span class="font-label-caps text-label-caps text-text-muted bg-surface-border px-2 py-1 rounded inline-block w-max">Jan 2024 - Sekarang</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant mb-3 font-semibold">Klien Independen</div>
+<p class="font-body-md text-body-md text-text-muted">
+                        Mengerjakan berbagai proyek pembuatan website profil perusahaan, aplikasi donasi, dan sistem informasi akademik untuk berbagai klien UMKM dan instansi pendidikan.
+                    </p>
+</div>
+<!-- Experience Item 3 -->
+<div class="relative pl-8 md:pl-12">
+<div class="absolute w-4 h-4 rounded-full bg-surface-border border-2 border-text-muted -left-[9px] top-1 ring-4 ring-background"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface">Web Developer</h3>
+<span class="font-label-caps text-label-caps text-text-muted bg-surface-border px-2 py-1 rounded inline-block w-max">Jan 2024 - Jul 2024</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant mb-3 font-semibold">PT. Manunggal Jaya Makmur</div>
+<p class="font-body-md text-body-md text-text-muted">
+                        Bertanggung jawab dalam pengembangan website korporat dan sistem manajemen proyek internal. Berkolaborasi dengan tim desain untuk mengimplementasikan antarmuka pengguna yang responsif.
+                    </p>
+</div>
+<!-- Experience Item 4 -->
+<div class="relative pl-8 md:pl-12">
+<div class="absolute w-4 h-4 rounded-full bg-surface-border border-2 border-text-muted -left-[9px] top-1 ring-4 ring-background"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface">Guru Produktif &amp; Staff IT Sekolah</h3>
+<span class="font-label-caps text-label-caps text-text-muted bg-surface-border px-2 py-1 rounded inline-block w-max">Jan 2022 - Jul 2023</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant mb-3 font-semibold">SMK Karya Nasional</div>
+<p class="font-body-md text-body-md text-text-muted">
+                        Mengelola infrastruktur jaringan sekolah, memelihara perangkat keras komputer lab, dan mengelola sistem informasi akademik berbasis web.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Projects (Bento Grid Style) -->
+<section class="space-y-8" id="proyek">
+<div class="border-b border-surface-border pb-4 flex justify-between items-end">
+<h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Proyek Pilihan</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Project 1: Fundraising App -->
+<div class="group bg-surface-container-low rounded-xl border border-surface-border overflow-hidden flex flex-col card-glow transition-all">
+<div class="relative h-64 overflow-hidden bg-background flex items-center justify-center p-6">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-low/90 z-10"></div>
+<!-- Placeholder for screenshot image -->
+<div class="w-full h-full bg-cover bg-top rounded shadow-lg transform group-hover:-translate-y-2 transition-transform duration-500 relative z-0" data-alt="A clean, modern screenshot of a fundraising web application interface showing donation progress bars, elegant typography, and a light-themed dashboard layout." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzEZoKMPvoijibgtAnXobRXpgruQPDEloPolXKAFfoCyJQnohA6zgT2MhVW9-HwAgBnl72r0BulmkHk7US9uI9yWeB06XogN6PRiq1_bVT7Z2hxerePmHDnKP8vHOoega3NS_NoQT47IHtpTJhbF8FpG31YEuZRmNjQN_4naCJAAcfz74jACvUQsDQKyTtEE3PR59e6bUSfzUpygmrH8F3XAnQZlFdM_CVl32Anhd8DOdPQzZrcV9i')"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col relative z-20">
+<div class="flex items-center justify-between mb-4">
+<div class="w-12 h-12 rounded bg-white flex items-center justify-center p-1">
+<img alt="Logo IPN" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrAVRYCKFupGsiNK9s6yj0UIx81fU9HPGRq8uF6M8JADCjU3nmJGvxc-tOg7EGaBMJ4CZUGvvKfD00aNqLl2RyG-_xjYFpNZzZg6IntAsE3pLbSwLujPWtGIOCPQv5oWcxQed6B0UtBR0PsI7BO66ZRZSvZ9UkASR2cURNCSu9Sn_4afQ5OM4CYLjJKE2nF3sCOw79x_LDwL5Ms13vU7mX3j6xAB1Bnpk8gSTQyVHLBatbMv_LdoJNZFufkvfUvRvLZw">
+</div>
+<span class="font-label-caps text-label-caps px-2 py-1 bg-surface-border text-on-surface-variant rounded">Platform</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface mb-2">Fundraising App</h3>
+<p class="font-body-md text-body-md text-text-muted mb-6 flex-1">
+                            Aplikasi penggalangan dana komprehensif untuk Lazipn.org. Memiliki fitur manajemen donasi, integrasi payment gateway otomatis, pelacakan kampanye, dan notifikasi real-time via WhatsApp.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="font-code-sm text-code-sm text-text-muted">Laravel</span>
+<span class="font-code-sm text-code-sm text-text-muted">•</span>
+<span class="font-code-sm text-code-sm text-text-muted">Payment Gateway</span>
+<span class="font-code-sm text-code-sm text-text-muted">•</span>
+<span class="font-code-sm text-code-sm text-text-muted">WA Gateway</span>
+</div>
+</div>
+</div>
+<!-- Project 2: Corporate Website -->
+<div class="group bg-surface-container-low rounded-xl border border-surface-border overflow-hidden flex flex-col card-glow transition-all">
+<div class="relative h-64 overflow-hidden bg-background flex items-center justify-center p-6">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-low/90 z-10"></div>
+<!-- Placeholder for screenshot image -->
+<div class="w-full h-full bg-cover bg-top rounded shadow-lg transform group-hover:-translate-y-2 transition-transform duration-500 relative z-0 border border-surface-border" data-alt="A professional corporate website homepage screenshot featuring a dark-themed hero section, modern sans-serif typography, and business consulting imagery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlxPbqH_RPoAISU3qJXiCn0o0gDZi3a6BFHu6XqvytjoseFRc5kJmdQIH01fwq4aoNy1dXBEqxIyRB0f9yV9jy2hJITlL7ohnB7AaOW9o4u-bu6qhi0d1CaZVLlWGZFtCM2LwAtCBdhL2f8UHcBRTwWDTAvzgwNl3RrQj1P6J1m1h4gZakgW5gknumeVErEvHjXFha7D88mPShmf7b90tXTKZ8XNvEMfhcEbV1aJeAWUaY_HTwdloH')"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col relative z-20">
+<div class="flex items-center justify-between mb-4">
+<div class="h-8 rounded bg-white flex items-center justify-center px-2">
+<img alt="Logo Digitalent" class="h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxqhNZhbz--nEEKWxh7XGrD1A9h6u6Iczf2r9ynncIyWRxFc8n4laMBYAKtNaGBpzvP00L_5R7gBdkX4KjEi4J-KutlAbtETqJdQ2OZc2bFEQRebWM-0qTrYeTwf1FiUNzS2LaNR0pno4VQWcHZ782XcDtiYihGEb8S-qc4OT9EgjA5H8Kcwqd-3-3ajg9ssb5LWCGFPDIGHlbc9uVl6nGPrNto0QMtY1FoXFK1FcfKxCfFwHtddV6IzcuKkYubHnZxg">
+</div>
+<span class="font-label-caps text-label-caps px-2 py-1 bg-surface-border text-on-surface-variant rounded">Corporate</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface mb-2">Corporate Website</h3>
+<p class="font-body-md text-body-md text-text-muted mb-6 flex-1">
+                            Website profil perusahaan untuk Digitalent.co.id. Dirancang dengan fokus pada performa, SEO, dan antarmuka profesional untuk menampilkan layanan IT training dan outsourcing.
+                        </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="font-code-sm text-code-sm text-text-muted">Filament</span>
+<span class="font-code-sm text-code-sm text-text-muted">•</span>
+<span class="font-code-sm text-code-sm text-text-muted">Tailwind CSS</span>
+<span class="font-code-sm text-code-sm text-text-muted">•</span>
+<span class="font-code-sm text-code-sm text-text-muted">MySQL</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="space-y-8" id="bisnis">
+<div class="border-b border-surface-border pb-4">
+<h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Inisiatif Bisnis</h2>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-border card-glow transition-all">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+<div>
+<div class="flex items-center gap-4 mb-2"><img alt="Aksesin Digital Logo" class="h-12 w-auto object-contain rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2dALU7gKVsqxKH5sDm8kNCwOZq2d6-VGLXI9hCeQPcvwi3by90TeHy8904Tm2ICWO2jl6CxLjnMA21y-CRk_aaXB3kHvwzyyxNfV2L_Q-wyaqWV7kNvs0wjlxrmqjIoLNH8QySWKgAJ43LL8_SAAKyLDlkwMuZk5_2BxZhE5prhfo9XEV5IduwstDZ1P_knlb9OS5K3T1kyV9_O58PHV3aR6HNxLJaIqNA7fYE7_iNf73iTHAakTDbhKiD3Ha98PCQ"><h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface mb-0">Aksesin Digital</h3></div>
+<p class="font-label-caps text-label-caps text-digitalent-blue mt-1">Founder &amp; Lead Developer</p>
+</div>
+<span class="font-label-caps text-label-caps px-3 py-1 bg-digitalent-blue/10 text-digitalent-blue rounded-full">Aktif</span>
+</div>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed max-w-2xl">Aksesin Digital adalah firma arsitektur teknologi (boutique IT agency) yang berfokus pada solusi otomatisasi bisnis dan pengembangan sistem cerdas. Memposisikan diri lebih dari sekadar vendor perangkat lunak, Aksesin Digital hadir sebagai mitra strategis yang mengubah kebocoran operasional menjadi efisiensi digital melalui infrastruktur kode yang elegan dan terukur.</p>
+<div class="mt-8 flex flex-wrap gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-digitalent-blue">rocket_launch</span>
+<span class="font-body-md text-body-md">Product Development</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-digitalent-blue">groups</span>
+<span class="font-body-md text-body-md">Client Solutions</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Education & Certifications -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Education -->
+<div class="space-y-6">
+<div class="border-b border-surface-border pb-4">
+<h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Pendidikan</h2>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border border-surface-border">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile font-geist text-on-surface">Universitas Mayasari Bakti</h3>
+<p class="font-body-md text-body-md text-text-muted mt-2">Fokus studi pada rekayasa perangkat lunak dan arsitektur sistem informasi.</p>
+</div>
+</div>
+<!-- Certifications -->
+<div class="space-y-6"><div class="border-b border-surface-border pb-4"><h2 class="font-headline-lg text-headline-lg font-geist text-on-surface">Sertifikasi</h2></div><div class="space-y-6"><div class="space-y-3"><h3 class="font-label-caps text-label-caps text-digitalent-blue uppercase tracking-wider">Internasional</h3><ul class="space-y-3"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-digitalent-blue">workspace_premium</span><span class="font-body-md text-body-md text-on-surface-variant">Linux+ Certified CE – CompTIA</span></li></ul></div><div class="space-y-3"><h3 class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">Pelatihan &amp; Sertifikasi Lokal</h3><ul class="space-y-3"><li class="flex items-center gap-3"><span class="material-symbols-outlined text-text-muted">verified</span><span class="font-body-md text-body-md text-on-surface-variant">Junior Web Developer (Digitalent Kominfo)</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-text-muted">verified</span><span class="font-body-md text-body-md text-on-surface-variant">AI Fundamentals</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-text-muted">verified</span><span class="font-body-md text-body-md text-on-surface-variant">Windows Forensic</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-text-muted">verified</span><span class="font-body-md text-body-md text-on-surface-variant">Ethical Hacking</span></li><li class="flex items-center gap-3"><span class="material-symbols-outlined text-text-muted">verified</span><span class="font-body-md text-body-md text-on-surface-variant">Cyberwarriors</span></li></ul></div></div></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-padding bg-surface-container-lowest border-t border-surface-border mt-12" id="kontak">
+<div class="flex flex-col items-center gap-stack-md max-w-container-max mx-auto px-gutter">
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface mb-4 font-geist">Yopi Hendriansah</div>
+<div class="flex gap-6 mb-8">
+<a class="text-text-muted hover:text-on-surface transition-colors hover:scale-110 transition-transform" href="#">
+<span class="font-body-md text-body-md">Instagram</span>
+</a>
+<a class="text-text-muted hover:text-on-surface transition-colors hover:scale-110 transition-transform" href="#">
+<span class="font-body-md text-body-md">Facebook</span>
+</a>
+<a class="text-text-muted hover:text-on-surface transition-colors hover:scale-110 transition-transform" href="#">
+<span class="font-body-md text-body-md">YouTube</span>
+</a>
+</div>
+<div class="font-label-caps text-label-caps text-text-muted">
+                © 2024 Yopi Hendriansah. Buatan Indonesia.
+            </div>
+</div>
+</footer>
+
+
+</body></html>
