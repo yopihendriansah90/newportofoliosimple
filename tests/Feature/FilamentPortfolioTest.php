@@ -16,6 +16,7 @@ class FilamentPortfolioTest extends TestCase
         $this->actingAs(User::where('email', 'yopihendriansah90@gmail.com')->first());
 
         $this->get('/admin')->assertOk()->assertSee('/admin/profiles')->assertSee('Material+Symbols+Outlined');
+        $this->get('/admin/profile')->assertOk()->assertSee('Akun Saya');
         $this->get('/admin/profiles')->assertRedirect('/admin/profiles/1/edit');
         $this->get('/admin/profiles/1/edit')->assertOk();
 

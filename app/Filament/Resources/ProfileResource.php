@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProfileResource\Pages;
 use App\Models\Profile;
 use Filament\Forms\Components\FileUpload;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
@@ -26,15 +27,52 @@ class ProfileResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return $schema->components([
-            TextInput::make('name')->required(),
-            TextInput::make('headline')->required(),
-            Textarea::make('bio')->rows(6)->columnSpanFull(),
-            TextInput::make('location'),
-            TextInput::make('email')->email(),
-            TextInput::make('phone'),
-            FileUpload::make('photo_path')->image()->disk('public')->directory('portfolio')->columnSpanFull(),
-            FileUpload::make('cv_path')->acceptedFileTypes(['application/pdf'])->disk('public')->directory('portfolio/cv')->downloadable(),
-            Toggle::make('is_available')->label('Available for work'),
+            Section::make('Identitas')
+                ->description('Informasi utama yang tampil pada halaman depan portfolio.')
+                ->schema([
+                    TextInput::make('name')->label('Nama')->required(),
+                    TextInput::make('headline')->label('Headline')->required(),
+                    Textarea::make('bio')->label('Bio')->rows(6)->helperText('Ceritakan ringkas tentang keahlian dan pengalaman utama Anda.')->columnSpanFull(),
+                ])
+                ->columns(2)
+                ->columnSpanFull(),
+            Section::make('Kontak')
+                ->description('Informasi yang digunakan pengunjung untuk menghubungi Anda.')
+                ->schema([
+                    TextInput::make('location')->label('Lokasi'),
+                    TextInput::make('email')->label('Email')->email(),
+                    TextInput::make('phone')->label('Nomor WhatsApp'),
+                ])
+                ->columns(2)
+                ->columnSpanFull(),
+            Section::make('Media Profile')
+                ->description('Foto profile dan CV yang ditampilkan atau diunduh dari portfolio.')
+                ->schema([
+                    FileUpload::make('photo_path')
+                        ->label('Foto Profile')
+                        ->image()
+                        ->imageEditor()
+                        ->imagePreviewHeight('220')
+                        ->maxSize(5120)
+                        ->disk('public')
+                        ->directory('portfolio')
+                        ->openable(),
+                    FileUpload::make('cv_path')
+                        ->label('CV')
+                        ->acceptedFileTypes(['application/pdf'])
+                        ->maxSize(10240)
+                        ->disk('public')
+                        ->directory('portfolio/cv')
+                        ->downloadable()
+                        ->openable(),
+                ])
+                ->columns(2)
+                ->columnSpanFull(),
+            Section::make('Status Profile')
+                ->schema([
+                    Toggle::make('is_available')->label('Available for work')->helperText('Tampilkan status siap menerima pekerjaan atau kolaborasi.'),
+                ])
+                ->columnSpanFull(),
         ]);
     }
 
