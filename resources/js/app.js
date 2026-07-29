@@ -79,6 +79,39 @@ if (skillSlider) {
     updateSkillSlider();
 }
 
+const certificationSlider = document.querySelector('[data-certification-slider]');
+if (certificationSlider) {
+    const cards = [...certificationSlider.querySelectorAll('.certification-card')];
+    const dots = document.querySelector('[data-certification-dots]');
+    const count = document.querySelector('[data-certification-count]');
+    const previous = document.querySelector('[data-certification-prev]');
+    const next = document.querySelector('[data-certification-next]');
+    const cardStep = () => cards[0]?.offsetWidth + 16 || 1;
+
+    cards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slider-dot';
+        dot.setAttribute('aria-label', `Lihat item sertifikasi ${index + 1}`);
+        dot.addEventListener('click', () => cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }));
+        dots?.appendChild(dot);
+    });
+
+    const updateCertificationSlider = () => {
+        const index = Math.min(cards.length - 1, Math.max(0, Math.round(certificationSlider.scrollLeft / cardStep())));
+        dots?.querySelectorAll('.slider-dot').forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+        if (count) count.textContent = `${index + 1} / ${cards.length}`;
+        if (previous) previous.disabled = index === 0;
+        if (next) next.disabled = index === cards.length - 1;
+    };
+
+    previous?.addEventListener('click', () => cards[Math.max(0, Math.round(certificationSlider.scrollLeft / cardStep()) - 1)]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }));
+    next?.addEventListener('click', () => cards[Math.min(cards.length - 1, Math.round(certificationSlider.scrollLeft / cardStep()) + 1)]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }));
+    certificationSlider.addEventListener('scroll', updateCertificationSlider, { passive: true });
+    window.addEventListener('resize', updateCertificationSlider);
+    updateCertificationSlider();
+}
+
 const galleryModal = document.querySelector('[data-gallery-modal]');
 const galleryImage = galleryModal?.querySelector('[data-gallery-image]');
 const galleryTitle = galleryModal?.querySelector('[data-gallery-title]');
@@ -152,10 +185,13 @@ const closeGallery = () => {
 
 document.querySelectorAll('[data-gallery-open]').forEach((button) => {
     button.addEventListener('click', () => {
-        const payload = document.getElementById(`project-gallery-${button.dataset.galleryOpen}`);
+        const payload = document.getElementById(`project-gallery-${button.dataset.galleryOpen}`) || document.getElementById(`certificate-gallery-${button.dataset.galleryOpen.replace('certificate-', '')}`);
         galleryItems = payload ? JSON.parse(payload.textContent) : [];
         galleryIndex = 0;
-        if (galleryModal) galleryModal.dataset.title = button.closest('.project-card')?.querySelector('h3')?.textContent?.trim() || '';
+        if (galleryModal) {
+            galleryModal.dataset.title = button.closest('.project-card, .certification-card')?.querySelector('h3')?.textContent?.trim() || '';
+            galleryModal.classList.toggle('gallery-single', galleryItems.length <= 1);
+        }
         if (galleryThumbnails) {
             galleryThumbnails.innerHTML = '';
             galleryItems.forEach((item, index) => {

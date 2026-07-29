@@ -20,7 +20,7 @@ class SocialLinkResource extends Resource
     protected static ?string $model = SocialLink::class;
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-link';
     protected static string|\UnitEnum|null $navigationGroup = 'Portfolio';
-    protected static ?int $navigationSort = 7;
+    protected static ?int $navigationSort = 8;
 
     public static function form(Schema $schema): Schema
     {

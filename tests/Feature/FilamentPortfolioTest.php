@@ -19,7 +19,7 @@ class FilamentPortfolioTest extends TestCase
         $this->get('/admin/profiles')->assertRedirect('/admin/profiles/1/edit');
         $this->get('/admin/profiles/1/edit')->assertOk();
 
-        foreach (['skill-categories', 'skills', 'experiences', 'projects', 'education', 'social-links', 'site-settings'] as $resource) {
+        foreach (['skill-categories', 'skills', 'certifications', 'experiences', 'projects', 'education', 'social-links', 'site-settings'] as $resource) {
             $this->get('/admin/' . $resource)->assertOk();
         }
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use App\Models\Experience;
+use App\Models\Certification;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\SkillCategory;
@@ -23,6 +24,7 @@ class PortfolioController extends Controller
             'experiences' => Experience::query()->where('is_active', true)->orderBy('sort_order')->orderByDesc('started_at')->get(),
             'projects' => Project::query()->where('is_active', true)->where('is_featured', true)->with(['technologies', 'media'])->orderBy('sort_order')->get(),
             'educations' => Education::query()->where('is_active', true)->orderBy('sort_order')->get(),
+            'certifications' => Certification::query()->where('is_active', true)->with('media')->orderBy('sort_order')->orderByDesc('completed_at')->get(),
             'socialLinks' => SocialLink::query()->where('is_active', true)->orderBy('sort_order')->get(),
             'settings' => $settings,
         ]);
