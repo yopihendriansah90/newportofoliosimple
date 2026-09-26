@@ -59,7 +59,7 @@
     .skill-slider { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; margin-top: -.25rem; margin-bottom: -.5rem; padding-top: .25rem; padding-bottom: .5rem; }
     .skill-slider::-webkit-scrollbar { display: none; }
     .skill-card { flex: 0 0 88%; scroll-snap-align: start; }
-    .certification-slider { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding: .25rem 0 .5rem; margin: -.25rem 0 -.5rem; }
+    .certification-slider { display: flex; align-items: flex-start; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; scrollbar-width: none; padding: .25rem 0 .5rem; margin: -.25rem 0 -.5rem; }
     .certification-slider::-webkit-scrollbar { display: none; }
     .certification-card { flex: 0 0 88%; scroll-snap-align: start; }
     .certification-cover { display: flex; height: 10rem; width: calc(100% + 2.5rem); align-items: center; justify-content: center; overflow: hidden; margin: -1.25rem -1.25rem 1.25rem; border: 0; border-bottom: 1px solid #25252b; padding: 0; background: #202024; color: #777780; text-align: left; }
