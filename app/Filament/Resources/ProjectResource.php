@@ -27,7 +27,6 @@ class ProjectResource extends Resource
         return $schema->components([
             TextInput::make('name')->required(),
             TextInput::make('slug')->required(),
-            TextInput::make('summary')->columnSpanFull(),
             Textarea::make('description')->rows(5)->columnSpanFull(),
             SpatieMediaLibraryFileUpload::make('cover')->collection('cover')->image()->disk('public')->required(),
             SpatieMediaLibraryFileUpload::make('gallery')->collection('gallery')->multiple()->reorderable()->image()->disk('public')->maxFiles(12)->columnSpanFull(),

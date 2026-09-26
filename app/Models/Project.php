@@ -13,7 +13,7 @@ class Project extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'slug', 'summary', 'description', 'image_path', 'gallery', 'demo_url', 'repository_url', 'year', 'is_featured', 'sort_order', 'is_active'];
+    protected $fillable = ['name', 'slug', 'description', 'image_path', 'gallery', 'demo_url', 'repository_url', 'year', 'is_featured', 'sort_order', 'is_active'];
 
     protected function casts(): array
     {
