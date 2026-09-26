@@ -70,6 +70,7 @@
     .project-image { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #202024; }
     .project-image img { height: 100%; width: 100%; object-fit: cover; transition: transform .5s ease; }
     .project-card:hover .project-image img { transform: scale(1.04); }
+    .project-description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .project-gallery-count { position: absolute; right: .75rem; top: .75rem; display: inline-flex; align-items: center; gap: .25rem; border: 1px solid rgb(255 255 255 / .15); border-radius: .35rem; background: rgb(0 0 0 / .65); padding: .35rem .5rem; font-family: 'JetBrains Mono', monospace; font-size: .68rem; color: white; }
     .gallery-modal { position: fixed; inset: 0; z-index: 80; display: flex; align-items: stretch; justify-content: center; }
     .gallery-modal.hidden { display: none; }
