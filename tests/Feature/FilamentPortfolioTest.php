@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class FilamentPortfolioTest extends TestCase
@@ -19,6 +20,8 @@ class FilamentPortfolioTest extends TestCase
         $this->get('/admin/profile')->assertOk()->assertSee('Akun Saya');
         $this->get('/admin/profiles')->assertRedirect('/admin/profiles/1/edit');
         $this->get('/admin/profiles/1/edit')->assertOk();
+        $this->get('/')->assertOk()->assertDontSee('Unduh CV');
+        $this->assertFalse(Schema::hasColumn('profiles', 'cv_path'));
 
         foreach (['skill-categories', 'skills', 'certifications', 'experiences', 'projects', 'education', 'social-links', 'site-settings'] as $resource) {
             $this->get('/admin/' . $resource)->assertOk();

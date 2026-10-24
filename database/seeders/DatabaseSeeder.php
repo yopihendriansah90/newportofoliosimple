@@ -35,7 +35,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'yopihendriansah90@gmail.com',
             'phone' => '6283116545674',
             'photo_path' => 'portfolio/yopi.jpeg',
-            'cv_path' => 'portfolio/cv/01KYNVWHYP33VFRYG7RM97K0EK.pdf',
             'is_available' => true,
         ]);
 
@@ -142,7 +141,7 @@ class DatabaseSeeder extends Seeder
             'brand_name' => 'YH Portfolio', 'footer_tagline' => 'Buatan Indonesia', 'section_projects_title' => 'Proyek Pilihan',
             'seo_title' => 'Yopi Hendriansah - Full-Stack Programmer', 'seo_description' => 'Portfolio Yopi Hendriansah, Full-Stack Programmer.',
             'nav_about' => 'Tentang', 'nav_skills' => 'Skills', 'nav_experience' => 'Pengalaman', 'nav_projects' => 'Proyek', 'nav_contact' => 'Kontak',
-            'navigation_title' => 'Navigasi', 'availability_label' => 'Available for work', 'download_cv_label' => 'Unduh CV', 'contact_cta_label' => 'Hubungi Saya',
+            'navigation_title' => 'Navigasi', 'availability_label' => 'Available for work', 'contact_cta_label' => 'Hubungi Saya',
             'skills_title' => 'Keahlian Teknis', 'experience_title' => 'Pengalaman Profesional', 'projects_title' => 'Proyek Pilihan',
             'project_link_label' => 'Lihat proyek', 'empty_projects_label' => 'Belum ada proyek pilihan.', 'education_title' => 'Pendidikan',
             'contact_title' => 'Mari berkolaborasi', 'contact_description' => 'Terbuka untuk diskusi proyek, kolaborasi, dan peluang baru.',

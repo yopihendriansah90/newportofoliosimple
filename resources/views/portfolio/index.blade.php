@@ -33,9 +33,6 @@
                 <a href="#pendidikan" class="nav-link">{{ $setting('nav_education', 'Pendidikan') }}</a>
                 <a href="#sertifikasi" class="nav-link">{{ $setting('nav_certifications', 'Sertifikasi') }}</a>
                 <a href="#kontak" class="nav-link">{{ $setting('nav_contact', 'Kontak') }}</a>
-                @if ($profile?->cv_path)
-                    <a href="{{ $mediaUrl($profile->cv_path) }}" target="_blank" class="primary-button">{{ $setting('download_cv_label', 'Unduh CV') }}</a>
-                @endif
             </nav>
             <button type="button" class="icon-button md:hidden" data-menu-open aria-label="Buka menu navigasi">
                 <span class="material-symbols-outlined">menu</span>
@@ -52,9 +49,6 @@
                     <a href="#{{ $anchor }}" data-menu-link class="mobile-nav-link">{{ $setting($key, $fallback) }}<span class="material-symbols-outlined text-base">arrow_forward</span></a>
                 @endforeach
             </nav>
-            @if ($profile?->cv_path)
-                <a href="{{ $mediaUrl($profile->cv_path) }}" target="_blank" class="primary-button mt-5 flex w-full justify-center">{{ $setting('download_cv_label', 'Unduh CV') }}</a>
-            @endif
         </section>
     </div>
 
@@ -72,7 +66,6 @@
                 </div>
                 <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                     <a href="#kontak" class="primary-button justify-center">{{ $setting('contact_cta_label', 'Hubungi Saya') }}<span class="material-symbols-outlined text-lg">arrow_outward</span></a>
-                    @if ($profile?->cv_path)<a href="{{ $mediaUrl($profile->cv_path) }}" target="_blank" class="secondary-button justify-center">{{ $setting('download_cv_label', 'Unduh CV') }}</a>@endif
                 </div>
             </div>
             <div class="mt-10 lg:mt-0"><div class="profile-frame"><img src="{{ $profilePhoto }}" alt="{{ $profile?->name }}" class="h-full w-full object-cover object-top grayscale transition duration-500 hover:grayscale-0"></div></div>

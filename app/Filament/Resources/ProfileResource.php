@@ -57,14 +57,6 @@ class ProfileResource extends Resource
                         ->disk('public')
                         ->directory('portfolio')
                         ->openable(),
-                    FileUpload::make('cv_path')
-                        ->label('CV')
-                        ->acceptedFileTypes(['application/pdf'])
-                        ->maxSize(10240)
-                        ->disk('public')
-                        ->directory('portfolio/cv')
-                        ->downloadable()
-                        ->openable(),
                 ])
                 ->columns(2)
                 ->columnSpanFull(),

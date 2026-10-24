@@ -119,7 +119,6 @@ Menu dibuka sebagai bottom sheet atau panel dari bawah dengan item besar yang mu
 │  Proyek                     │
 │  Kontak                     │
 │                             │
-│  [ Unduh CV ]               │
 └─────────────────────────────┘
 ```
 
